@@ -7,7 +7,7 @@
 
 ![Trained Agents][image1]
 
-This repository contains material related to Udacity's [Deep Reinforcement Learning Nanodegree](https://www.udacity.com/course/deep-reinforcement-learning-nanodegree--nd893) program **BUT with my own implementations of mini-projects and projects**. 
+This repository contains material related to Udacity's [Deep Reinforcement Learning Nanodegree](https://www.udacity.com/course/deep-reinforcement-learning-nanodegree--nd893) program **BUT** with my own implementations of mini-projects and projects. 
 
 ## Table of Contents
 
