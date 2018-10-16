@@ -136,8 +136,10 @@ class Vanilla():
 class Double(Vanilla):
     """Interacts with and learns from the environment."""
 
-    def __init__(self, state_size, action_size, hidden_layers, seed):
-        super().__init__(state_size, action_size, hidden_layers, seed)
+    def __init__(self, state_size, action_size, hidden_layers, seed, buffer_size=BUFFER_SIZE,
+                 batch_size=BATCH_SIZE, gamma=GAMMA, lr=LR, update_every=UPDATE_EVERY):
+        super().__init__(state_size, action_size, hidden_layers, seed, buffer_size=BUFFER_SIZE,
+                 batch_size=BATCH_SIZE, gamma=GAMMA, lr=LR, update_every=UPDATE_EVERY)
        
     def learn(self, experiences, gamma):
         """Update value parameters using given batch of experience tuples.
