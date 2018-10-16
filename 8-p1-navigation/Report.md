@@ -22,7 +22,7 @@ The task is episodic, and in order to solve the environment, the agent must get 
 
 ## Learning algorithms
 
-![test](img/dqn-default.png)
+<img src="img/dqn-default.png" width="400" />
 
 ## Plot of rewards
 
