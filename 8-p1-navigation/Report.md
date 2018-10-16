@@ -2,9 +2,10 @@
 
 ## Table of content
 * [I. Introduction](#introduction)
-* [I. Introduction](#introduction)
+* [II. Learning algorithms](#learning-algo)
+  * [II.1 Learning algorithms](#vanilla-dqn)
 
-## Introduction
+## I. Introduction
 <a id="introduction"></a>
 
 For this project, we will train an agent to navigate (and collect bananas!) in a large, square world.  
@@ -20,7 +21,16 @@ The state space has 37 dimensions and contains the agent's velocity, along with 
 The task is episodic, and in order to solve the environment, the agent must get an average score of +13 over 100 consecutive episodes.
 
 
-## Learning algorithms
+## II. Learning algorithms
+<a id="learning-algo"></a>
+
+### II.1 Vanilla DQN with default parameters
+<a id="vanilla-dqn"></a>
+
+
+```
+
+```
 
 <img src="img/dqn-default.png" width="400" />
 
