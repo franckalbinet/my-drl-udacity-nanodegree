@@ -4,6 +4,7 @@
 * [I. Introduction](#introduction)
 * [II. Learning algorithms](#learning-algo)
   * [II.1 Vanilla DQN](#vanilla-dqn)
+  * [II.2 Vanilla DQN with lower exploration](#dqn-lower-exploration)
 
 ## I. Introduction
 <a id="introduction"></a>
@@ -35,8 +36,6 @@ Our approach consists in:
 ### II.1 Vanilla DQN with default parameters
 <a id="vanilla-dqn"></a>
 
-
-
 We first implemented a Vanilla DQN approach with the followin agent and DQN hyperparameters:
 
 ```
@@ -53,13 +52,23 @@ gamma=0.99                        # discount factor
 lr=0.0005                         # learning rate
 ```
 
-It is important to note that the choice of this parameters is somewhat arbitrary and simply inherited from a previous environment. However, as a first attempt, keeping exploration high with a large discount factor looks sensible for now.
+It is important to note that the choice of these parameters is somewhat arbitrary and simply inherited from a previous environment. However, as a first attempt, keeping exploration high with a large discount factor looks sensible.
 
 The plot below shows that although this quite arbitrary choice, the agent is able to learn and solve the environment in less than 500 episodes.
 
 <img src="img/dqn-default.png" width="450" />
 
-## Plot of rewards
+### II.2 Vanilla DQN with lower exploration
+<a id="dqn-lower-exploration"></a>
+
+Finding out a relevant exploration vs. exploitation strategy is central to Reinforcement Learning and one of the biggest challenge. In our particular context, watching the agent learning, we notice that:
+* based on agent distance from closest bananas exploration required may vary (it looks a bit irrelevant to oscillate many times left, right, ... at each step when closest bananas are far away);
+* at the same time, the agent gets hooked by walls quite often and need randomness in order to get off the wall and continue its "trip".
+
+**Here we decide to decrease `eps_start` to 0.5.**
+
+We can see that indeed, the agent solve the environment in almost 400 episodes instead.
+<img src="img/dqn-more-less-exploration.png" width="450" />
 
 ## Ideas for future work
 
