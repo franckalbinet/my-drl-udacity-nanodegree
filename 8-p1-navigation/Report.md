@@ -1,8 +1,7 @@
 **DEEP REINFORCEMENT LEARNING NANODEGREE - UDACITY**
 ___
 
-# Project 1 report: Navigation
----
+## Project 1 report: Navigation
 
 ## Table of content
 * [I. Introduction](#introduction)
