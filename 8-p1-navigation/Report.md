@@ -8,6 +8,7 @@
   * [II.3 Vanilla DQN with more systematic hyperparameters tuning](#dqn-tuning)
   * [II.4 Double DQN](#double-dqn)
   * [II.5 Comparison DQN vs. DDQN](#dqn-vs-ddqn)
+* [III. Ideas for future work](#future-work)
 
 ## I. Introduction
 <a id="introduction"></a>
@@ -132,5 +133,15 @@ Then the rolling standard deviation.
 
 <img src="img/sd-dqn-ddqn-compared.png" width="500" />
 
-## Ideas for future work
+## III. Ideas for future work
+<a id="future-work"></a>
+
+As regards potential axis of improvements, we can obviously implement DQN improved algorithms such as Prioritized Experience Replay, Dueling, Rainbow, ... We assume we would get better results. However, we are convinced that a systematic exploration of the hyperparameters, several Neural Networks architecture, ... would be even more critical to build an agent that would learn even faster.
+
+Additionnally, it would be interesting to find out how learning from pixels would "change the game".
+
+Last, the variability of scores (event when the agent is close to solve the environment) might be an issue. Setting up a more ambitious goal to consider this environment solved, for instance having min score higher than 13 over 100 episodes would be an interesting challenge.
+
+Re-defining the criteria for solving 
+
 
