@@ -6,6 +6,7 @@
   * [II.1 Vanilla DQN](#vanilla-dqn)
   * [II.2 Vanilla DQN with lower exploration](#dqn-lower-exploration)
   * [II.3 Vanilla DQN with more systematic hyperparameters tuning](#dqn-tuning)
+  * [II.4 Double DQN](#double-dqn)
 
 ## I. Introduction
 <a id="introduction"></a>
@@ -57,7 +58,7 @@ It is important to note that the choice of these parameters is somewhat arbitrar
 
 The plot below shows that although this quite arbitrary choice, the agent is able to learn and solve the environment in less than 500 episodes.
 
-<img src="img/dqn-default.png" width="450" />
+<img src="img/dqn-default.png" width="500" />
 
 ### II.2 Vanilla DQN with lower exploration
 <a id="dqn-lower-exploration"></a>
@@ -69,7 +70,7 @@ Finding out a relevant exploration vs. exploitation strategy is central to Reinf
 **Here we decide to decrease `eps_start` to 0.5.**
 
 We can see that indeed, the agent solve the environment in almost 400 episodes instead.
-<img src="img/dqn-more-less-exploration.png" width="450" />
+<img src="img/dqn-more-less-exploration.png" width="500" />
 
 ### II.3 Vanilla DQN with more systematic hyperparameters tuning
 <a id="dqn-tuning"></a>
@@ -101,7 +102,15 @@ lr = 0.0001     # learning rate
 
 We now apply this parameters to a Vanilla DQN agent and indeed see a much faster learning.
 
-<img src="img/dqn-tuned.png" width="450" />
+<img src="img/dqn-tuned.png" width="500" />
+
+This is already a big improvement and have no doubt that a more thoroughly exploration of hyperparameters space would lead to even better results.
+
+### II.4 Double DQN
+<a id="double-dqn"></a>
+
+Given the "best" hyperparameters, we now implement a slightly improved version of a Vanilla DQN fighting with overestimation of DQN target values.
+
 
 
 
