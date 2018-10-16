@@ -40,12 +40,13 @@ Our approach consists in:
 We first implemented a Vanilla DQN approach with the followin agent and DQN hyperparameters:
 
 ```
+n_episodes=2000 # maximum number of training episodes
+max_t=1000 # maximum number of timesteps per episode
+eps_start=1.0 # starting value of epsilon, for epsilon-greedy action selection
+eps_end=0.01 # minimum value of epsilon
+eps_decay=0.995 # multiplicative factor (per episode) for decreasing epsilon
 
-n_episodes=2000
-max_t=1000
-eps_start=1.0
-eps_end=0.01
-eps_decay=0.995
+
 ```
 
 <img src="img/dqn-default.png" width="400" />
