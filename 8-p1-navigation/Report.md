@@ -7,6 +7,7 @@
   * [II.2 Vanilla DQN with lower exploration](#dqn-lower-exploration)
   * [II.3 Vanilla DQN with more systematic hyperparameters tuning](#dqn-tuning)
   * [II.4 Double DQN](#double-dqn)
+  * [II.5 Comparison DQN vs. DDQN](#dqn-vs-ddqn)
 
 ## I. Introduction
 <a id="introduction"></a>
@@ -118,6 +119,16 @@ We do observe a clear improvement.
 
 To be significative, it would be better to repeat this experiment over various environment seed and multiple run of the algorithms. We might as well need to run the hyper-parameters search over the DDQN itself. 
 
+### II.5 Comparison DQN vs. DDQN
+<a id="dqn-vs-ddqn"></a>
+
+In this chapter, we compare both DQN vs. DQQN (with same hyperparameters).
+
+We first compare the rolling mean:
+<img src="img/mean-dqn-ddqn-compared.png" width="500" />
+
+Then the rolling standard deviation:
+<img src="img/sd-dqn-ddqn-compared.png" width="500" />
 
 ## Ideas for future work
 
