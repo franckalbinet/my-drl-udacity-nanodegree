@@ -101,7 +101,7 @@ lr = 0.0001     # learning rate
 
 We now apply this parameters to a Vanilla DQN agent and indeed see a much faster learning.
 
-<img src="img/img/dqn-tuned.png" width="450" />
+<img src="img/dqn-tuned.png" width="450" />
 
 
 
