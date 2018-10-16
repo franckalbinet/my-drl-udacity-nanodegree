@@ -124,10 +124,12 @@ To be significative, it would be better to repeat this experiment over various e
 
 In this chapter, we compare both DQN vs. DQQN (with same hyperparameters).
 
-We first compare the rolling mean:
+We first compare the rolling mean.
+
 <img src="img/mean-dqn-ddqn-compared.png" width="500" />
 
-Then the rolling standard deviation:
+Then the rolling standard deviation.
+
 <img src="img/sd-dqn-ddqn-compared.png" width="500" />
 
 ## Ideas for future work
