@@ -3,7 +3,7 @@
 ## Table of content
 * [I. Introduction](#introduction)
 * [II. Learning algorithms](#learning-algo)
-  * [II.1 Learning algorithms](#vanilla-dqn)
+  * [II.1 Vanilla DQN](#vanilla-dqn)
 
 ## I. Introduction
 <a id="introduction"></a>
@@ -24,12 +24,28 @@ The task is episodic, and in order to solve the environment, the agent must get 
 ## II. Learning algorithms
 <a id="learning-algo"></a>
 
+The goal of this project is to implement value-based Deep Reinforcement Learning algorithms in order to solve Unity Bananas' environment. We have at our disposal a series of algorithms from Deep Q-network (DQN), double DQN, Prioritized Replay DQN, Dueling DQN, ...
+
+Our approach consists in:
+1. re-use Vanilla DQN with hyperparameters used to solve OpenAI Gym Lunar Landing environment;
+2. based on visual observation of agent's behaviour during learning, guessing more optimal hyperparameters;
+3. explore more systematically hyperparameters space to find out "best parameters";
+4. implement one of the improved version of DQN (Double DQN in our case).
+
 ### II.1 Vanilla DQN with default parameters
 <a id="vanilla-dqn"></a>
 
 
+
+We first implemented a Vanilla DQN approach with the followin agent and DQN hyperparameters:
+
 ```
 
+n_episodes=2000
+max_t=1000
+eps_start=1.0
+eps_end=0.01
+eps_decay=0.995
 ```
 
 <img src="img/dqn-default.png" width="400" />
