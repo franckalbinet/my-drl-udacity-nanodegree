@@ -40,18 +40,22 @@ Our approach consists in:
 We first implemented a Vanilla DQN approach with the followin agent and DQN hyperparameters:
 
 ```
-n_episodes=2000 # maximum number of training episodes
-max_t=1000 # maximum number of timesteps per episode
-eps_start=1.0 # starting value of epsilon, for epsilon-greedy action selection
-eps_end=0.01 # minimum value of epsilon
-eps_decay=0.995 # multiplicative factor (per episode) for decreasing epsilon
+n_episodes=2000                   # maximum number of training episodes
+max_t=1000                        # maximum number of timesteps per episode
+eps_start=1.0                     # starting value of epsilon, for epsilon-greedy action selection
+eps_end=0.01                      # minimum value of epsilon
+eps_decay=0.995                   # multiplicative factor (per episode) for decreasing epsilon
 
-hidden_layers=[64, 64] # nb. of hidden layers and unit per layer of neural network
-buffer_size=int(1e5) # size of replay buffer
-batch_size=64 # learning samples batch size
-gamma=0.99 # discount factor
-lr=0.0005 # learning rate
+hidden_layers=[64, 64]            # nb. of hidden layers and unit per layer of neural network
+buffer_size=int(1e5)              # size of replay buffer
+batch_size=64                     # learning samples batch size
+gamma=0.99                        # discount factor
+lr=0.0005                         # learning rate
 ```
+
+It is important to note that the choice of this parameters is somewhat arbitrary and simply inherited from a previous environment. However, as a first attempt, keeping exploration high with a large discount factor looks sensible for now.
+
+The plot below shows that although this quite arbitrary choice, the agent is able to learn and solve the environment in less than 500 episodes.
 
 <img src="img/dqn-default.png" width="450" />
 
