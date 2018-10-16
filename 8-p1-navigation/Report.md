@@ -46,10 +46,14 @@ eps_start=1.0 # starting value of epsilon, for epsilon-greedy action selection
 eps_end=0.01 # minimum value of epsilon
 eps_decay=0.995 # multiplicative factor (per episode) for decreasing epsilon
 
-
+hidden_layers=[64, 64] # nb. of hidden layers and unit per layer of neural network
+buffer_size=int(1e5) # size of replay buffer
+batch_size=64 # learning samples batch size
+gamma=0.99 # discount factor
+lr=0.0005 # learning rate
 ```
 
-<img src="img/dqn-default.png" width="400" />
+<img src="img/dqn-default.png" width="450" />
 
 ## Plot of rewards
 
