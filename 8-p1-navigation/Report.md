@@ -5,6 +5,7 @@
 * [II. Learning algorithms](#learning-algo)
   * [II.1 Vanilla DQN](#vanilla-dqn)
   * [II.2 Vanilla DQN with lower exploration](#dqn-lower-exploration)
+  * [II.3 Vanilla DQN with more systematic hyperparameters tuning](#dqn-tuning)
 
 ## I. Introduction
 <a id="introduction"></a>
@@ -69,6 +70,12 @@ Finding out a relevant exploration vs. exploitation strategy is central to Reinf
 
 We can see that indeed, the agent solve the environment in almost 400 episodes instead.
 <img src="img/dqn-more-less-exploration.png" width="450" />
+
+### II.3 Vanilla DQN with more systematic hyperparameters tuning
+<a id="dqn-tuning"></a>
+
+In that part, we want to test a more systematic exploration of hyperparameters space 
+
 
 ## Ideas for future work
 
