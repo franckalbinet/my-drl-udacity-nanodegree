@@ -109,9 +109,14 @@ This is already a big improvement and have no doubt that a more thoroughly explo
 ### II.4 Double DQN
 <a id="double-dqn"></a>
 
-Given the "best" hyperparameters, we now implement a slightly improved version of a Vanilla DQN fighting with overestimation of DQN target values.
+Given the "best" hyperparameters, we now implement a slightly improved version of a Vanilla DQN fighting with over-estimation of DQN target values.
+
+We do observe a clear improvement.
+
+<img src="img/double-dqn-tuned.png" width="500" />
 
 
+To be significative, it would be better to repeat this experiment over various environment seed and multiple run of the algorithms. We might as well need to run the hyper-parameters search over the DDQN itself. 
 
 
 ## Ideas for future work
