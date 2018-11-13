@@ -137,7 +137,7 @@ WEIGHT_DECAY = 0        # L2 weight decay
 # Neural Networks
 hidden_layers = [400, 300]
 ```
-
+* **Plot of Scores over time steps**
 
 ![DDPG agent successfully trained](img/ddpg-reacher-trained.png)
 
