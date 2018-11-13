@@ -9,13 +9,10 @@ import torch
 import torch.nn.functional as F
 import torch.optim as optim
 
-#BUFFER_SIZE = int(1e5)  # replay buffer size
 BUFFER_SIZE = int(1e6)  # replay buffer size
-#BATCH_SIZE = 128        # minibatch size
 BATCH_SIZE = 1024        # minibatch size
 GAMMA = 0.99            # discount factor
 TAU = 1e-3              # for soft update of target parameters
-#LR_ACTOR = 1e-4         # learning rate of the actor 
 LR_ACTOR = 1e-3         # learning rate of the actor 
 LR_CRITIC = 1e-3        # learning rate of the critic
 WEIGHT_DECAY = 0        # L2 weight decay
@@ -58,16 +55,6 @@ class Agent():
         """Save experience in replay memory."""
         # Save experience / reward
         self.memory.add(state, action, reward, next_state, done)
-   
-    #def step(self, state, action, reward, next_state, done):
-    #    """Save experience in replay memory, and use random sample from buffer to learn."""
-    #    # Save experience / reward
-    #    self.memory.add(state, action, reward, next_state, done)
-
-        # Learn, if enough samples are available in memory
-    #    if len(self.memory) > BATCH_SIZE:
-    #        experiences = self.memory.sample()
-    #        self.learn(experiences, GAMMA)
             
     def step(self):
         """Use random sample from buffer to learn."""
@@ -163,7 +150,7 @@ class OUNoise:
     def sample(self):
         """Update internal state and return it as a noise sample."""
         x = self.state
-        dx = self.theta * (self.mu - x) + self.sigma * np.array([random.random() for i in range(len(x))])
+        dx = self.theta * (self.mu - x) + self.sigma * np.array([np.random.randn() for i in range(len(x))])
         self.state = x + dx
         return self.state
 
