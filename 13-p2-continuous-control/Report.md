@@ -3,11 +3,8 @@
 ## Table of content
 * [I. Introduction](#introduction)
 * [II. Learning algorithms](#learning-algo)
-  * [II.1 Vanilla DQN](#vanilla-dqn)
-  * [II.2 Vanilla DQN with lower exploration](#dqn-lower-exploration)
-  * [II.3 Vanilla DQN with more systematic hyperparameters tuning](#dqn-tuning)
-  * [II.4 Double DQN](#double-dqn)
-  * [II.5 Comparison DQN vs. DDQN](#dqn-vs-ddqn)
+  * [II.1 DDPG Pendulum algorithm as a default choice](#ddpg-pendulum)
+  * [II.2 Hyperparameters tuning](#hyper-tuning)
 * [III. Ideas for future work](#future-work)
 
 ## I. Introduction
@@ -58,7 +55,8 @@ This default implementation shows poor performance:
 * learning extremely slow
 * struggling even reaching an average score of 1
 
-### II.1 Hyperparameters tuning
+### II.2 Hyperparameters tuning
+<a id="hyper-tuning"></a>
 
 Tuning hyperparameters through trial-and-error experimentations is long, sometimes frustrating and ultimately rewarding process. 
 
@@ -70,7 +68,7 @@ After hours of experimentation, we've finally focused on three axis of optimizat
 
 * **Speed of learning**
 
-Indeed, we first noticed that learning at every single time step critically slows down the learning process as gaining experience (stored into the replay buffer) takes longer. Instead, we only enter the learning phase every 20 time steps:
+Indeed, we first noticed that learning at every single time step critically slows down the learning process as gaining experience (stored into the replay buffer) takes longer. Instead, we only **enter the learning phase every 20 time steps**:
 
 ```
 def ddpg(n_episodes=1000, max_t=1000, print_every=100, learn_every=20, solved_score = 30):
@@ -117,9 +115,29 @@ Despite the speed up of nb. of experiences collected over time, the learning was
 
 * **Stability**
 
-After an early enthousiasm: faster learning, scores increasing toward 25, we finally realized that the score was finally decreasing again. In order to try stabilizing the learning we first add Batch normalization into both Actor and Critic Neural Networks without much success. We finally added gradient clipping to the Critic network as suggested into the "Benchmark implementation" learning material.
+After an early enthousiasm: faster learning, scores increasing toward 25, we finally realized that the score was finally decreasing again. In order to try stabilizing the learning we first add Batch normalization into both Actor and Critic Neural Networks without much success. We finally added **gradient clipping** to the Critic network as suggested into the "Benchmark implementation" learning material.
 
-This last round of optimization was a game changer and we finally managed to train the agent in about 300 episodes as shown below:
+This last round of optimization (see hyperparameters below) was a game changer and we finally managed to train the agent in about 300 episodes.
+
+* **Hyperparameters**
+```
+# Runner
+n_episodes=1000         # maximum number of training episodes
+max_t=1000              # maximum number of timesteps per episode
+
+# Agent
+BUFFER_SIZE = int(1e6)  # replay buffer size
+BATCH_SIZE = 1024        # minibatch size
+GAMMA = 0.99            # discount factor
+TAU = 1e-3              # for soft update of target parameters
+LR_ACTOR = 1e-3         # learning rate of the actor 
+LR_CRITIC = 1e-3        # learning rate of the critic
+WEIGHT_DECAY = 0        # L2 weight decay
+
+# Neural Networks
+hidden_layers = [400, 300]
+```
+
 
 ![DDPG agent successfully trained](img/ddpg-reacher-trained.png)
 
