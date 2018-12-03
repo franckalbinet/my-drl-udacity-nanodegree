@@ -29,6 +29,8 @@ The goal of this project is to Deep Reinforcement Learning algorithms to solve a
 * both states and actions are continuous
 * two agents play against each others.
 
+### II.1 Approach
+
 [DDPG (Deep Deterministic Policy Gradient)](https://arxiv.org/abs/1509.02971) algorithm is one of the state-of-the-art technique to handle efficiently continuous states and actions. Furthermore, successful attempts to adapt DDPG to multi-agent settings have been carried out [Multi-Agent Actor-Critic for Mixed
 Cooperative-Competitive Environments](https://papers.nips.cc/paper/7217-multi-agent-actor-critic-for-mixed-cooperative-competitive-environments.pdf) allowing to address, in particular, issues of environment non-stationarity and where agent populations are able to discover various physical and informational coordination strategies.
 
@@ -59,7 +61,8 @@ noise_reduction = min_noise**(1/n_episodes)
 
 Below an overview of all hyperparameters allowing to solve the environment:
 
-* **Hyperparameters**
+### II.2 Hyperparameters
+
 ```
 # Runner
 n_episodes=10000        # maximum number of training episodes
@@ -78,14 +81,15 @@ WEIGHT_DECAY = 0        # L2 weight decay
 hidden_layers = [128, 64]
 ```
 
-* **Outcome**
+### II.3 Outcome
 Using this setup and after hyperparameters tuning (and after many trial and errors attempts), the environment was solved in about 1180 episodes (but worth noting that training took part only every 5 actions) in less than 5 min on a laptop and without GPU.
 
+### II.4 Plot of the result
 Below the plot of score over time steps:
 
 ![DDPG agent successfully trained](img/tennis-solved-scores.png)
 
-And trained agents in action:
+### II.5 Trained agents in action
 
 ![DDPG agent successfully trained in action](img/tennis-solved.gif)
 
