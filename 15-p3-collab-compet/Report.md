@@ -3,6 +3,11 @@
 ## Table of content
 * [I. Introduction](#introduction)
 * [II. Learning algorithms](#learning-algo)
+  * [II.1 Approach](#learning-algo)
+  * [II.2 Hyperparameters](#learning-algo)
+  * [II.3 Outcome](#learning-algo)
+  * [II.4 Plot of the result](#learning-algo)
+  * [II.5 The agents in action](#learning-algo)
 * [III. Ideas for future work](#future-work)
 
 ## I. Introduction
@@ -82,7 +87,7 @@ hidden_layers = [128, 64]
 ```
 
 ### II.3 Outcome
-Using this setup and after hyperparameters tuning (and after many trial and errors attempts), the environment was solved in about 1180 episodes (but worth noting that training took part only every 5 actions) in less than 5 min on a laptop and without GPU.
+Using this setup and after hyperparameters tuning (and after many trial and errors attempts), the environment was **solved in about 1180 episodes** (but worth noting that training took part only every 5 actions) in less than 5 min on a laptop and without GPU.
 
 ### II.4 Plot of the result
 Below the plot of score over time steps:
@@ -98,14 +103,12 @@ Below the plot of score over time steps:
 ## III. Ideas for future work
 <a id="future-work"></a>
 
-
 In order to pursue in DDPG's side and assess possibility of further improvements:
 1. it would be interesting to investigate how implementing a truly multi-agent version of DDPG would improve the learning;
 2. for more systematic optimization and given the impact of the random seeds on performance, it would be interesting to more systematically (grid-search for instance) explore the hyperparameters space over various random seeds;
 3. last, it would be worth investigating how to stabilize the learning over time/episodes especially. The plot below highlighting the instability of the learning after having solved the environment.
 
 ![DDPG agent instability](img/scores-in-the-long-run.png)
-
 
 
 
